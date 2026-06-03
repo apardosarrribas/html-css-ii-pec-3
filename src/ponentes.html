@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <title>Ponentes · Jornadas de Artesanía</title>
+</head>
+
+<body>
+
+    <header class="flex flex-col md:flex-row items-center justify-between gap-6
+               px-[clamp(1.5rem,5vw,4rem)] py-9
+               bg-white/30 backdrop-blur-[5px] border-b border-black/5
+               sticky top-0 z-[100]">
+
+        <div class="font-semibold text-[1.2rem] tracking-wide text-(--color-texto)">
+            <i class="fa-solid fa-hands mr-1"></i> Artesanía
+        </div>
+
+        <nav class="flex gap-[clamp(1rem,3vw,2rem)]">
+            <a href="index.html" class="nav-link"><i class="fa-solid fa-house mr-1"></i> Inicio</a>
+            <a href="ponentes.html" class="nav-link active"><i class="fa-solid fa-users mr-1"></i>
+                Ponentes</a>
+        </nav>
+
+    </header>
+
+    <main class="page-section" style="container-type: inline-size;">
+
+        <div class="hero__content relative mb-12">
+            <h1>Los Ponentes</h1>
+            <p class="mt-6 max-w-[40ch] text-[1.1rem]">
+                Una selección de mentes creativas que están redefiniendo el valor
+                de lo hecho a mano.
+            </p>
+        </div>
+
+        <section class="flex flex-wrap gap-10 items-stretch mt-12">
+
+            <div class="speaker-card group flex-1 basis-[300px]
+                    bg-white rounded-lg border border-black/[0.03]
+                    p-6 transition-transform duration-300" data-aos="fade-up">
+                <div class="w-full aspect-[16/10] overflow-hidden mb-4">
+                    <img src="assets/images/ponente1.jpg" alt="Elena Martín" class="w-full h-full object-cover [filter:sepia(20%)]
+                        group-hover:[filter:sepia(0%)] group-hover:scale-105
+                        transition-all duration-500">
+                </div>
+                <div>
+                    <h3 class="font-serif text-[1.8rem] my-2">Elena Martín</h3>
+                    <p class="text-[0.8rem] font-bold tracking-[1px] mb-3 text-(--color-naranja)">Cerámica
+                        Ancestral</p>
+                    <p class="text-sm leading-relaxed mb-4">
+                        Especialista en técnicas de cocción al aire libre y recuperación
+                        de barros locales.
+                    </p>
+                    <a href="#" class="inline-flex items-center gap-2 text-[1rem] font-normal
+                               transition-colors duration-300
+                                 text-(--color-azul)">
+                        <i class="fa-solid fa-arrow-right no-underline"></i> <span class="underline">Ver
+                            proyectos</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="speaker-card group flex-1 basis-[300px]
+                    bg-white rounded-lg border border-black/[0.03]
+                    p-6 transition-transform duration-300" data-aos="fade-down">
+                <div class="w-full aspect-[16/10] overflow-hidden mb-4">
+                    <img src="assets/images/ponente2.jpg" alt="Marc Sala" class="w-full h-full object-cover [filter:sepia(20%)]
+                        group-hover:[filter:sepia(0%)] group-hover:scale-105
+                        transition-all duration-500">
+                </div>
+                <div>
+                    <h3 class="font-serif text-[1.8rem] my-2">Marc Sala</h3>
+                    <p class="text-[0.8rem] font-bold tracking-[1px] mb-3 text-(--color-naranja)">
+                        Ebanistería Contemporánea</p>
+                    <p class="text-sm leading-relaxed mb-4">
+                        Diseñador de mobiliario que fusiona tecnología CNC con
+                        ensambles japoneses.
+                    </p>
+                    <a href="#" class="inline-flex items-center gap-2 text-[1rem] font-normal
+                               transition-colors duration-300
+                                text-(--color-azul)">
+                        <i class="fa-solid fa-arrow-right no-underline"></i> <span class="underline">Ver
+                            proyectos</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="speaker-card group flex-1 basis-[300px]
+                    bg-white rounded-lg border border-black/[0.03]
+                    p-6 transition-transform duration-300" data-aos="fade-up">
+                <div class="w-full aspect-[16/10] overflow-hidden mb-4">
+                    <img src="assets/images/ponente3.png" alt="Sonia Vilas" class="w-full h-full object-cover [filter:sepia(20%)]
+                        group-hover:[filter:sepia(0%)] group-hover:scale-105
+                        transition-all duration-500">
+                </div>
+                <div>
+                    <h3 class="font-serif text-[1.8rem] my-2">Sonia Vilas</h3>
+                    <p class="text-[0.8rem] font-bold tracking-[1px] mb-3 text-(--color-naranja)">Tejido
+                        Sostenible</p>
+                    <p class="text-sm leading-relaxed mb-4">
+                        Investigadora de tintes naturales y fibras recuperadas de la
+                        industria textil.
+                    </p>
+                    <a href="#" class="inline-flex items-center gap-2 text-[1rem] font-normal
+                               transition-colors duration-300
+                                 text-(--color-azul)">
+                        <i class="fa-solid fa-arrow-right no-underline"></i> <span class="underline">Ver
+                            proyectos</span>
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <include src="./views/footer.html"></include>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Inter:wght@300;400;500;600&display=swap");
+
+@import "tailwindcss/index.css";
+
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-texto);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    line-height: 1.625;
+    margin: 0;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    margin: 0;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    line-height: 1;
+    color: var(--color-azul);
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: var(--color-naranja);
+  transition: 0.3s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: var(--color-naranja);
+}
+
+.footer {
+  container-type: inline-size;
+}
+
+
+.page-section {
+  @apply relative isolate overflow-hidden;
+  padding: 4rem clamp(1.5rem, 5vw, 4rem);
+}
+
+.page-section::after {
+  content: "";
+  @apply absolute top-[-40px] right-[-40px] -z-10 rounded-[60%_40%_70%_30%] opacity-80;
+  width: clamp(150px, 30vw, 260px);
+  height: clamp(150px, 25vw, 200px);
+  background: var(--color-naranja);
+}
+
+.page-section::before {
+  content: "";
+  @apply absolute bottom-[-40px] left-[-40px] -z-10 rounded-[50%_50%_30%_70%] opacity-80;
+  width: clamp(150px, 30vw, 240px);
+  height: clamp(150px, 25vw, 180px);
+  background: var(--color-azul);
+}
+
+.footer-link {
+  @apply text-lg hover:opacity-40 transition-opacity;
+  color: var(--color-azul);
+  opacity: 0.7;
+}
+
+.footer-item {
+  @apply flex max-md:w-full max-md:justify-center;
+}

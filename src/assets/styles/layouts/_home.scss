@@ -1,0 +1,19 @@
+.hero__image {
+  border-radius: 300px 300px 20px 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+// Círculo blanco decorativo
+.hero__content::before {
+  content: "";
+  position: absolute;
+  width: min(100%, 480px);
+  aspect-ratio: 1 / 1;
+  background: var(--color-blanco);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+}
