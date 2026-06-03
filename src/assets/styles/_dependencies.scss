@@ -107,7 +107,7 @@
 }
 
 .footer-link {
-  @apply text-lg hover:opacity-40 transition-opacity;
+  @apply text-sm hover:opacity-40 transition-opacity;
   color: var(--color-azul);
   opacity: 0.7;
 }
