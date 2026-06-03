@@ -102,12 +102,13 @@
   background: var(--color-azul);
 }
 
+.speaker-description {
+  @apply text-sm leading-relaxed;
+}
+
 .footer-link {
   @apply text-lg hover:opacity-40 transition-opacity;
   color: var(--color-azul);
   opacity: 0.7;
 }
 
-.footer-item {
-  @apply flex max-md:w-full max-md:justify-center;
-}

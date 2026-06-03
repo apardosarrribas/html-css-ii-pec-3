@@ -39,82 +39,24 @@
         </div>
 
         <section class="flex flex-wrap gap-10 items-stretch mt-12">
-
-            <div class="speaker-card group flex-1 basis-[300px]
-                    bg-white rounded-lg border border-black/[0.03]
-                    p-6 transition-transform duration-300" data-aos="fade-up">
-                <div class="w-full aspect-[16/10] overflow-hidden mb-4">
-                    <img src="assets/images/ponente1.jpg" alt="Elena Martín" class="w-full h-full object-cover [filter:sepia(20%)]
-                        group-hover:[filter:sepia(0%)] group-hover:scale-105
-                        transition-all duration-500">
-                </div>
-                <div>
-                    <h3 class="font-serif text-[1.8rem] my-2">Elena Martín</h3>
-                    <p class="text-[0.8rem] font-bold tracking-[1px] mb-3 text-(--color-naranja)">Cerámica
-                        Ancestral</p>
-                    <p class="text-sm leading-relaxed mb-4">
-                        Especialista en técnicas de cocción al aire libre y recuperación
-                        de barros locales.
-                    </p>
-                    <a href="#" class="inline-flex items-center gap-2 text-[1rem] font-normal
-                               transition-colors duration-300
-                                 text-(--color-azul)">
-                        <i class="fa-solid fa-arrow-right no-underline"></i> <span class="underline">Ver
-                            proyectos</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="speaker-card group flex-1 basis-[300px]
-                    bg-white rounded-lg border border-black/[0.03]
-                    p-6 transition-transform duration-300" data-aos="fade-down">
-                <div class="w-full aspect-[16/10] overflow-hidden mb-4">
-                    <img src="assets/images/ponente2.jpg" alt="Marc Sala" class="w-full h-full object-cover [filter:sepia(20%)]
-                        group-hover:[filter:sepia(0%)] group-hover:scale-105
-                        transition-all duration-500">
-                </div>
-                <div>
-                    <h3 class="font-serif text-[1.8rem] my-2">Marc Sala</h3>
-                    <p class="text-[0.8rem] font-bold tracking-[1px] mb-3 text-(--color-naranja)">
-                        Ebanistería Contemporánea</p>
-                    <p class="text-sm leading-relaxed mb-4">
-                        Diseñador de mobiliario que fusiona tecnología CNC con
-                        ensambles japoneses.
-                    </p>
-                    <a href="#" class="inline-flex items-center gap-2 text-[1rem] font-normal
-                               transition-colors duration-300
-                                text-(--color-azul)">
-                        <i class="fa-solid fa-arrow-right no-underline"></i> <span class="underline">Ver
-                            proyectos</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="speaker-card group flex-1 basis-[300px]
-                    bg-white rounded-lg border border-black/[0.03]
-                    p-6 transition-transform duration-300" data-aos="fade-up">
-                <div class="w-full aspect-[16/10] overflow-hidden mb-4">
-                    <img src="assets/images/ponente3.png" alt="Sonia Vilas" class="w-full h-full object-cover [filter:sepia(20%)]
-                        group-hover:[filter:sepia(0%)] group-hover:scale-105
-                        transition-all duration-500">
-                </div>
-                <div>
-                    <h3 class="font-serif text-[1.8rem] my-2">Sonia Vilas</h3>
-                    <p class="text-[0.8rem] font-bold tracking-[1px] mb-3 text-(--color-naranja)">Tejido
-                        Sostenible</p>
-                    <p class="text-sm leading-relaxed mb-4">
-                        Investigadora de tintes naturales y fibras recuperadas de la
-                        industria textil.
-                    </p>
-                    <a href="#" class="inline-flex items-center gap-2 text-[1rem] font-normal
-                               transition-colors duration-300
-                                 text-(--color-azul)">
-                        <i class="fa-solid fa-arrow-right no-underline"></i> <span class="underline">Ver
-                            proyectos</span>
-                    </a>
-                </div>
-            </div>
-
+            <include src="./views/speaker-card-1.html">{
+                "Nombre": "Elena Martín",
+                "Tipo": "Cerámica Ancestral",
+                "Descripcion": "Especialista en técnicas de cocción al aire libre y recuperación
+                de barros locales."
+            }</include>
+            <include src="./views/speaker-card-2.html">{
+                "Nombre": "Marc Sala",
+                "Tipo": "Ebanistería Contemporánea",
+                "Descripcion": "Diseñador de mobiliario que fusiona tecnología CNC con
+                ensambles japoneses."
+            }</include>
+            <include src="./views/speaker-card-3.html">{
+                "Nombre": "Sonia Vilas",
+                "Tipo": "Tejido Sostenible",
+                "Descripcion": "Investigadora de tintes naturales y fibras recuperadas de la
+                industria textil."
+            }</include>
         </section>
 
     </main>

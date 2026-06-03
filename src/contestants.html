@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contestants · Cooking Contest 2024</title>
+  <style>
+    /* ── Reset & Base ─────────────────────────────── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      color: #111;
+      background: #fff;
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* ── Nav ──────────────────────────────────────── */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 64px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .navbar__brand {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .navbar__links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .navbar__links a {
+      font-size: 0.95rem;
+      color: #444;
+      transition: color 0.2s;
+    }
+
+    .navbar__links a:hover {
+      color: #111;
+    }
+
+    .navbar__links .btn-active {
+      background: #111;
+      color: #fff;
+      padding: 0.5rem 1.25rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* ── Hero ─────────────────────────────────────── */
+    .page-hero {
+      text-align: center;
+      padding: 5rem 2rem 3rem;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .page-hero p {
+      font-size: 1rem;
+      color: #666;
+      max-width: 40ch;
+      margin: 0 auto;
+    }
+
+    /* ── Hero image ───────────────────────────────── */
+    .hero-image {
+      margin: 0 2rem 5rem;
+      border-radius: 12px;
+      overflow: hidden;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+      background: #d4e4d0;
+      /* placeholder color matching the food/outdoor scene */
+    }
+
+    /* ── Section ──────────────────────────────────── */
+    .section {
+      padding: 0 2rem 5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section__title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .section__subtitle {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    /* ── Recipe cards ─────────────────────────────── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      padding: 1.5rem;
+      background: #fff;
+      transition: box-shadow 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .card__recipe-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      color: #111;
+    }
+
+    .card__author {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .card__avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #c8d8c4;
+      flex-shrink: 0;
+    }
+
+    .card__author-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: #111;
+    }
+
+    .card__author-desc {
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.4;
+    }
+
+    /* ── Footer ───────────────────────────────────── */
+    .footer {
+      background: #fff;
+      color: #111;
+      padding: 3rem 2rem;
+      margin-top: 3rem;
+      border-top: 1px solid #e5e5e5;
+    }
+
+
+    .footer__inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      gap: 4rem;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .footer__brand {
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      min-width: 180px;
+      max-width: 280px;
+      color: #111;
+      line-height: 1.3;
+    }
+
+    .footer__social {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .footer__social a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: #aaa;
+      transition: background 0.2s;
+    }
+
+    .footer__social a:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .footer__col h4 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .footer__col ul {
+      list-style: none;
+    }
+
+    .footer__col ul li {
+      margin-bottom: 0.6rem;
+    }
+
+    .footer__col ul li a {
+      font-size: 0.9rem;
+      color: rgba(1, 1, 1, 0.6);
+      transition: color 0.2s;
+    }
+
+    .footer__col ul li a:hover {
+      color: #111;
+    }
+
+    /* ── Avatar placeholder colors ────────────────── */
+    .avatar-1 {
+      background: #b5c9b3;
+    }
+
+    .avatar-2 {
+      background: #c9b5b5;
+    }
+
+    .avatar-3 {
+      background: #b5b5c9;
+    }
+
+    /* ── Responsive ───────────────────────────────── */
+    @media (max-width: 640px) {
+      .navbar__links {
+        gap: 1rem;
+      }
+
+      .navbar__links li:not(:last-child) {
+        display: none;
+      }
+
+      .footer__inner {
+        gap: 2rem;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <span class="navbar__brand">Cooking contest 2024 edition</span>
+    <ul class="navbar__links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">The contest</a></li>
+      <li><a href="#">Recipes</a></li>
+      <li><a href="#" class="btn-active">Contestants</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page hero -->
+  <section class="page-hero">
+    <h1>Contestants</h1>
+    <p>This section describes the recipes of the best contestants</p>
+  </section>
+
+  <!-- Hero image -->
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80"
+      alt="Food spread on a table outdoors">
+  </div>
+
+  <!-- Recipes section -->
+  <section class="section">
+    <h2 class="section__title">The recipes</h2>
+    <p class="section__subtitle">These are the recipes of the best contestants</p>
+
+    <div class="cards">
+
+      <div class="card">
+        <p class="card__recipe-title">Cajun seafood pasta</p>
+        <div class="card__author">
+          <div class="card__avatar avatar-1"></div>
+          <div>
+            <p class="card__author-name">John Cooper</p>
+            <p class="card__author-desc">This Cajun seafood pasta recipe is a hot one, but delicious!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="card__recipe-title">Cedar planked salmon</p>
+        <div class="card__author">
+          <div class="card__avatar avatar-2"></div>
+          <div>
+            <p class="card__author-name">Marta Alonso</p>
+            <p class="card__author-desc">Salmon reaches its full potential when it's grilled on top of a cedar plank.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="card__recipe-title">Poulet au vinaigre</p>
+        <div class="card__author">
+          <div class="card__avatar avatar-3"></div>
+          <div>
+            <p class="card__author-name">Mary Ann Stones</p>
+            <p class="card__author-desc">Irresistible chicken, cooked with vinegar.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <div>
+        <p class="footer__brand">Cooking contest 2024 edition</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Recipes</h4>
+        <ul>
+          <li><a href="#">Cajun seafood pasta</a></li>
+          <li><a href="#">Cedar planked salmon</a></li>
+          <li><a href="#">Poulet au vinagre</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contestants</h4>
+        <ul>
+          <li><a href="#">John Cooper</a></li>
+          <li><a href="#">Marta Alonso</a></li>
+          <li><a href="#">Mary Ann Stones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contest editions</h4>
+        <ul>
+          <li><a href="#">2024</a></li>
+          <li><a href="#">2023</a></li>
+          <li><a href="#">2022</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+
+</html>
